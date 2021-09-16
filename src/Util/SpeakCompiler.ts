@@ -4,6 +4,7 @@ import {PairName} from "./PairName";
 import Axios from "axios";
 import {ScheduleNumberPair} from "../DSTU/SchedulePair";
 import {GroupNames} from "../DSTU/GroupNames";
+const { br } = require('alice-renderer');
 
 export default class SpeakCompiler {
     static async Rasp(groupId: number, date: Date, lessons: IRasp[]): Promise<string> {
@@ -60,7 +61,7 @@ export default class SpeakCompiler {
         if (lesson.classRoom?.distance)
             ask.push("Пара дистанционная!");
 
-        return ask.join(" ") + ".";
+        return ask.join(" ");
     }
 
     static async PairOne(lesson: IRasp): Promise<string | null> {

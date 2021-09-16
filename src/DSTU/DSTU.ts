@@ -18,6 +18,7 @@ export default class DSTU {
             if (weekDay !== lesson["деньНедели"]) continue;
 
             let lessonObject: LessonObject = lesson;
+            if (lessonObject.дисциплина.indexOf('Учебно-тренировочный') > -1) continue;
 
             // @ts-ignore
             lessons.set(SchedulePair[lessonObject.начало], LessonParser.Parse(lessonObject));
@@ -28,6 +29,7 @@ export default class DSTU {
         lessons.forEach((lesson) => {
             ras.push(lesson);
         })
+        console.log(ras);
 
 
         return ras;
