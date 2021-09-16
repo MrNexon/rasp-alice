@@ -57,7 +57,7 @@ alice.any((ctx) => {
 
     if (ctx.originalUtterance.match(/пар/)) return atPair(date, by);
     else if (ctx.originalUtterance.match(/[на во] [а-я]*/)) return atDay(date, by);
-    else if (ctx.originalUtterance.match(/нет/)) return reply.end`Ну и ладно. Попробуй что нибуть у меня еще спросить, Pidaras... Pizda тебе!`
+    else if (ctx.originalUtterance.match(/нет/)) return reply.end`Ну и ладно. Попробуй что нибуть у меня еще спросить, Pidaras... Pizd+a тебе!`
 
     if (ctx.originalUtterance === "")
         return reply`На какой день вы хотите узнать расписание?`;
